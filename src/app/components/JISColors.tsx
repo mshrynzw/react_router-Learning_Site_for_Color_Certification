@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 
 interface JISColor {
@@ -114,14 +114,20 @@ export default function JISColors() {
 
         <header className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl mb-3">JIS慣用色名（64色）</h1>
-          <p className="text-gray-600">各色をクリックして慣用色名を確認しましょう</p>
+          <p className="text-gray-600">
+            各色をクリックして慣用色名を確認しましょう
+          </p>
         </header>
 
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
             {jisColors.map((color, index) => {
               const isRevealed = revealed.has(index);
-              const isLight = color.hex === "#ffffff" || color.hex === "#fef4d0" || color.hex === "#fce4d6" || color.hex === "#f3e6d7";
+              const isLight =
+                color.hex === "#ffffff" ||
+                color.hex === "#fef4d0" ||
+                color.hex === "#fce4d6" ||
+                color.hex === "#f3e6d7";
 
               return (
                 <div
