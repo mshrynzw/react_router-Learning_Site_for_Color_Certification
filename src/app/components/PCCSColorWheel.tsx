@@ -167,7 +167,7 @@ const pccsColors: ColorHue[] = [
     number: 20,
     symbol: "V",
     englishName: "Violet",
-    japaneseName: "紫",
+    japaneseName: "青紫",
     hex: "#281285",
     angle: 180,
   },
