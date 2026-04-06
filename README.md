@@ -2,12 +2,6 @@
 
 色彩検定の学習用に作成した Web アプリケーションです。Figma のデザインをもとに、React と React Router で画面遷移できる構成になっています。
 
-## デザイン
-
-元デザイン（Figma）:
-
-https://www.figma.com/design/DyBbX2KrUC5QPAim2PFFQ7/%E8%89%B2%E5%BD%A9%E6%A4%9C%E5%AE%9A%E5%AD%A6%E7%BF%92%E3%82%B5%E3%82%A4%E3%83%88%E4%BD%9C%E6%88%90
-
 ## 技術スタック
 
 - [Vite](https://vitejs.dev/)（ビルド・開発サーバー）
@@ -114,7 +108,3 @@ npx wrangler pages deploy dist --project-name=<プロジェクト名>
 
 - `.gitignore` … `node_modules`、`dist`、環境変数ファイルなどを除外
 - `.vscode/` … エディタ向けの推奨拡張・共通設定（チームで揃えたい場合に利用）
-
-## ライセンス
-
-プライベートプロジェクト（`package.json` の `"private": true`）として扱われています。
