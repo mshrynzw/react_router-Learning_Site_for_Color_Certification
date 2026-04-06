@@ -45,15 +45,70 @@ npm run dev
 
 ブラウザで表示される URL（通常は `http://localhost:5173`）を開いてください。
 
-## 本番ビルド
+## 本番ビルド（SSG）
 
-静的ファイルを `dist/` に出力します。
+Vite のクライアントビルドに加え、ビルド時プリレンダでルートごとの HTML を `dist/` に生成します。
 
 ```bash
 npm run build
 ```
 
-生成物は任意の静的ホスティングや CDN に配置できます。
+`pnpm` を使う場合は次のとおりです。
+
+```bash
+pnpm run build
+```
+
+成果物の `dist/` には、`/`・`/pccs`・`/jis-colors`・`/eye-structure` などの静的 HTML とアセットが含まれます。
+
+## Cloudflare Pages へのデプロイ
+
+[Cloudflare Pages](https://pages.cloudflare.com/) に Git リポジトリを接続するか、[Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/) で `dist/` をアップロードして公開できます。
+
+### Git 連携（推奨）
+
+1. Cloudflare ダッシュボードで **Workers & Pages** → **Create** → **Pages** → **Connect to Git** を選び、対象リポジトリとブランチを指定します。
+2. **ビルド設定**は次のようにします（ロックファイルが `pnpm-lock.yaml` のため、Pages は多くの場合 `pnpm` を自動選択します）。
+
+   | 項目 | 値 |
+   |------|-----|
+   | **Framework preset** | `None` |
+   | **Build command** | `pnpm run build`（`npm` のみ使う場合は `npm run build`） |
+   | **Build output directory** | `dist` |
+   | **Root directory** | `/`（リポジトリ直下がプロジェクトの場合） |
+
+3. **環境変数**（オプションだが推奨）で Node のメジャーバージョンを固定します。
+
+   - 変数名: `NODE_VERSION`
+   - 値: `20` または `22`（Vite 6 と互換性のある LTS）
+
+4. 保存してデプロイすると、ビルドログで `vite build` → SSR 用プリレンダバンドル → `node scripts/prerender.mjs` が実行され、最終的に `dist` が公開されます。
+
+`public/_redirects` はビルド時に `dist` にコピーされ、未定義パス向けのフォールバックに利用されます。
+
+### ビルドだけ先に確認する
+
+ローカルまたは CI で次を実行し、`dist/` の内容を確認してください。
+
+```bash
+pnpm install
+pnpm run build
+```
+
+プレビューは `npx vite preview`（`dist` をプレビュー）で行えます。
+
+### Wrangler CLI でアップロードする場合
+
+[Wrangler](https://developers.cloudflare.com/workers/wrangler/) を入れたうえで、ビルド済みの `dist/` を直接デプロイできます。
+
+```bash
+pnpm run build
+npx wrangler pages deploy dist --project-name=<プロジェクト名>
+```
+
+`<プロジェクト名>` は Cloudflare 上で作成した Pages プロジェクト名に置き換えてください。初回はブラウザまたは CLI で認証が必要です。
+
+参考: [Cloudflare Pages — Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/)、[Vite を Pages にデプロイする](https://developers.cloudflare.com/pages/framework-guides/deploy-a-vite-site/)
 
 ## リポジトリ構成のメモ
 

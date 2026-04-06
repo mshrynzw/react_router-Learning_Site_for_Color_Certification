@@ -1,10 +1,11 @@
-import { createBrowserRouter } from "react-router";
+import type { RouteObject } from "react-router";
 import Home from "./components/Home";
 import PCCSColorWheel from "./components/PCCSColorWheel";
 import JISColors from "./components/JISColors";
 import EyeStructure from "./components/EyeStructure";
 
-export const router = createBrowserRouter([
+/** ルートごとの SSG およびクライアントルーターで共有する定義 */
+export const routeConfig: RouteObject[] = [
   {
     path: "/",
     Component: Home,
@@ -21,4 +22,4 @@ export const router = createBrowserRouter([
     path: "/eye-structure",
     Component: EyeStructure,
   },
-]);
+];
