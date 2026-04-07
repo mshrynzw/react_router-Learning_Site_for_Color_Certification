@@ -337,10 +337,7 @@ export default function PCCSTones() {
       >
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <div className="text-sm text-gray-600 mb-1">
-              {isRevealed ? "トーン" : "？（クリックで表示）"}
-            </div>
-            <div className="text-base md:text-lg mb-1">
+            <div className="text-sm mb-1">
               {isRevealed ? (
                 <>
                   <span className="font-semibold">{tone.id}</span>
@@ -352,11 +349,6 @@ export default function PCCSTones() {
               ) : (
                 <span className="font-semibold">？</span>
               )}
-            </div>
-          </div>
-          <div className="shrink-0">
-            <div className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">
-              {tone.colors.length}色
             </div>
           </div>
         </div>
@@ -392,7 +384,7 @@ export default function PCCSTones() {
         </div>
 
         <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl mb-3">PCCSトーン（偶数番のみ）</h1>
+          <h1 className="text-3xl md:text-4xl mb-3">PCCSトーン</h1>
           <p className="text-gray-600">
             各トーンをクリックして、記号・名称・印象語を表示します
           </p>
@@ -401,7 +393,6 @@ export default function PCCSTones() {
         <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
           <div className="flex items-center justify-between gap-4 mb-4">
             <h2 className="text-lg md:text-xl">トーン分類（明度×彩度）</h2>
-            <div className="text-xs text-gray-500">参考: PCCSトーン分類図</div>
           </div>
 
           <div className="relative flex items-stretch gap-4 md:gap-6">
