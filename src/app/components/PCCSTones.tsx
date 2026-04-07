@@ -16,11 +16,11 @@ type NeutralStep = {
 };
 
 const neutralSteps: NeutralStep[] = [
-  { id: "W", labelEn: "White", labelJa: "白", hex: "#FFFFFF" },
-  { id: "ltGy", labelEn: "light gray", labelJa: "明るい灰", hex: "#D3D3D3" },
-  { id: "mGy", labelEn: "medium gray", labelJa: "中間灰", hex: "#A9A9A9" },
-  { id: "dkGy", labelEn: "dark gray", labelJa: "暗い灰", hex: "#696969" },
-  { id: "Bk", labelEn: "Black", labelJa: "黒", hex: "#000000" },
+  { id: "W", labelEn: "White", labelJa: "ホワイト", hex: "#FFFFFF" },
+  { id: "ltGy", labelEn: "light gray", labelJa: "ライトグレイ", hex: "#D3D3D3" },
+  { id: "mGy", labelEn: "medium gray", labelJa: "ミディアムグレイ", hex: "#A9A9A9" },
+  { id: "dkGy", labelEn: "dark gray", labelJa: "ダークグレイ", hex: "#696969" },
+  { id: "Bk", labelEn: "Black", labelJa: "ブラック", hex: "#000000" },
 ];
 
 const tones: Tone[] = [
@@ -108,7 +108,7 @@ const tones: Tone[] = [
   {
     id: "lt",
     labelJa: "ライト",
-    hintJa: "明るい",
+    hintJa: "あさい",
     // lt の偶数番 (2,4,...,24) のみ
     colors: [
       "#FB7482",
@@ -209,7 +209,7 @@ const tones: Tone[] = [
   {
     id: "ltg",
     labelJa: "ライトグレイッシュ",
-    hintJa: "明るい・灰み",
+    hintJa: "あかるいはいみの",
     // ltg の偶数番 (2,4,...,24) のみ
     colors: [
       "#D7A4B5",
@@ -229,7 +229,7 @@ const tones: Tone[] = [
   {
     id: "g",
     labelJa: "グレイッシュ",
-    hintJa: "灰み",
+    hintJa: "はいみの",
     // g の偶数番 (2,4,...,24) のみ
     colors: [
       "#7D4F5A",
@@ -249,7 +249,7 @@ const tones: Tone[] = [
   {
     id: "dkg",
     labelJa: "ダークグレイッシュ",
-    hintJa: "暗い・灰み",
+    hintJa: "くらいはいみの",
     // dkg の偶数番 (2,4,...,24) のみ
     colors: [
       "#3A2B2E",
