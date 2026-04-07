@@ -1,6 +1,7 @@
 import type { RouteObject } from "react-router";
 import Home from "./components/Home";
 import PCCSColorWheel from "./components/PCCSColorWheel";
+import PCCSTones from "./components/PCCSTones";
 import JISColors from "./components/JISColors";
 import EyeStructure from "./components/EyeStructure";
 
@@ -13,6 +14,10 @@ export const routeConfig: RouteObject[] = [
   {
     path: "/pccs",
     Component: PCCSColorWheel,
+  },
+  {
+    path: "/pccs-tones",
+    Component: PCCSTones,
   },
   {
     path: "/jis-colors",

@@ -10,7 +10,7 @@ export default function Home() {
           <p className="text-gray-600 text-lg">クリックで答えを確認しながら学習できます</p>
         </header>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Link
             to="/pccs"
             className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transform"
@@ -20,6 +20,29 @@ export default function Home() {
               <h2 className="text-2xl mb-3">PCCS色相環</h2>
               <p className="text-gray-600">
                 日本色研配色体系の24色相環を学習します
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/pccs-tones"
+            className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transform"
+          >
+            <div className="flex flex-col items-center text-center">
+              <div className="grid grid-cols-3 gap-1 w-20 h-20 mb-4">
+                <div className="bg-rose-200"></div>
+                <div className="bg-amber-200"></div>
+                <div className="bg-lime-200"></div>
+                <div className="bg-emerald-200"></div>
+                <div className="bg-cyan-200"></div>
+                <div className="bg-indigo-200"></div>
+                <div className="bg-pink-200"></div>
+                <div className="bg-yellow-100"></div>
+                <div className="bg-violet-200"></div>
+              </div>
+              <h2 className="text-2xl mb-3">PCCSトーン</h2>
+              <p className="text-gray-600">
+                トーン記号・名称・印象語をクリックで確認します
               </p>
             </div>
           </Link>
